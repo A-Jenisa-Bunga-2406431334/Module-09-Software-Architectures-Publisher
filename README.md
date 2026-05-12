@@ -12,18 +12,17 @@ URL yang sama pada publisher dan subscriber berarti keduanya terhubung ke **mess
 
 RabbitMQ berjalan sebagai message broker pada port 5672, dan interface management dapat diakses melalui browser di localhost:15672. Berikut adalah tampilan RabbitMQ management interface yang menunjukkan broker sedang berjalan:
 
-![RabbitMQ Running](../screenshoots/rabbitmq_running.png)
-
+![rabbitmq_running.png](screenshoots/rabbitmq_running.png)
 
 ## Sending and Processing Event
 
 Ketika publisher dijalankan, publisher mengirimkan 5 event `UserCreatedEventMessage` ke message broker RabbitMQ. Subscriber yang sedang berjalan akan menerima dan memproses setiap event tersebut secara real-time. Publisher dan subscriber tidak berkomunikasi langsung, melainkan melalui RabbitMQ sebagai perantara.
 
-![Sending Event](../screenshoots/sending_event.png)
+![sending_event.png](screenshoots/sending_event.png)
+
 
 ## Monitoring Chart Based on Publisher
 
 Ketika publisher dijalankan beberapa kali, terlihat spike pada chart Message rates di RabbitMQ management interface. Spike tersebut menunjukkan adanya pesan yang dikirim oleh publisher dan langsung diproses oleh subscriber. Chart kembali ke 0 karena subscriber memproses pesan dengan cepat sehingga tidak ada antrian yang menumpuk.
 
-![Monitoring Chart](../screenshoots/monitoring_chart.png)
-
+![monitoring_chart.png](screenshoots/monitoring_chart.png)
