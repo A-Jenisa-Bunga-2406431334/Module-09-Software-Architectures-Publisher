@@ -26,3 +26,4 @@ Ketika publisher dijalankan, publisher mengirimkan 5 event `UserCreatedEventMess
 Ketika publisher dijalankan beberapa kali, terlihat spike pada chart Message rates di RabbitMQ management interface. Spike tersebut menunjukkan adanya pesan yang dikirim oleh publisher dan langsung diproses oleh subscriber. Chart kembali ke 0 karena subscriber memproses pesan dengan cepat sehingga tidak ada antrian yang menumpuk.
 
 ![monitoring_chart.png](screenshoots/monitoring_chart.png)
+
